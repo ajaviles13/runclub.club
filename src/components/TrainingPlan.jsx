@@ -1007,11 +1007,12 @@ export default function TrainingPlan() {
                 fontWeight: 600,
               }}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M10 14L14 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                <path d="M7.5 16.5L5.8 18.2a3 3 0 104.2 4.2l1.7-1.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                <path d="M16.5 7.5l1.7-1.7a3 3 0 114.2 4.2l-1.7 1.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-              </svg>
+              <img
+                src="/images/website_link.png"
+                alt=""
+                aria-hidden
+                style={{ width: 22, height: 22, objectFit: "contain" }}
+              />
               Visit PlungePalz.com for more info
             </a>
           </div>
