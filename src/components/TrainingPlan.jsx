@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const RACE_DATE = new Date(2026, 11, 6);
-const PLAN_START = new Date(2026, 3, 16);
+const PLAN_START = new Date(2026, 3, 20);
 
 function getDaysToRace() {
   const today = new Date();
@@ -67,7 +67,30 @@ const DISC = {
 
 const d = (type, time, title, detail, flag = "") => ({ type, time, title, detail, flag });
 const R = d("rest", "", "Rest", "Full recovery. Hydrate, stretch, sleep well.");
-const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAY_LABELS = ["MON", "TUE", "WED", "THUR", "FRI", "SAT", "SUN"];
+
+function getWeekDisplayStartDate(weekNumber) {
+  const weekStart = new Date(PLAN_START.getFullYear(), PLAN_START.getMonth(), PLAN_START.getDate());
+  weekStart.setDate(weekStart.getDate() + (weekNumber - 1) * 7);
+  return weekStart;
+}
+
+function getDayLabelWithDate(weekNumber, dayIndex) {
+  const weekStart = getWeekDisplayStartDate(weekNumber);
+  const dayDate = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate());
+  dayDate.setDate(dayDate.getDate() + dayIndex);
+  return `${DAY_LABELS[dayIndex]} - ${dayDate.getMonth() + 1}/${dayDate.getDate()}`;
+}
+
+function formatWeekDateRange(weekNumber) {
+  const weekStart = getWeekDisplayStartDate(weekNumber);
+  const weekEnd = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate());
+  weekEnd.setDate(weekEnd.getDate() + 6);
+  const startMonth = weekStart.toLocaleString("en-US", { month: "short" });
+  const endMonth = weekEnd.toLocaleString("en-US", { month: "short" });
+  if (startMonth === endMonth) return `${startMonth} ${weekStart.getDate()}-${weekEnd.getDate()}`;
+  return `${startMonth} ${weekStart.getDate()}-${endMonth} ${weekEnd.getDate()}`;
+}
 
 const WEEKS = [
   {
@@ -523,7 +546,7 @@ function DayCard({ day, label, onOpen }) {
         cursor: "pointer",
       }}
     >
-      <div style={{ fontSize: 11, fontWeight: 700, color: "#475569", letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
+      <div style={{ fontSize: 11, fontWeight: 700, color: "#f8fafc", letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
       <div
         style={{
           display: "inline-block",
@@ -810,7 +833,7 @@ export default function TrainingPlan() {
               <div>
                 <span style={{ fontWeight: 700, fontSize: 20, color: "#f8fafc" }}>{week.theme}</span>
                 <span style={{ marginLeft: 8, fontSize: 14, color: "#475569" }}>
-                  Week {week.wk} · {week.dates}
+                  Week {week.wk} · {formatWeekDateRange(week.wk)}
                 </span>
               </div>
               {week.wk === curWk && (
@@ -860,8 +883,8 @@ export default function TrainingPlan() {
                   <DayCard
                     key={i}
                     day={day}
-                    label={week.wk === 33 ? "" : DAY_LABELS[i]}
-                    onOpen={() => openDayModal(day, week.wk === 33 ? day.title : DAY_LABELS[i])}
+                    label={getDayLabelWithDate(week.wk, i)}
+                    onOpen={() => openDayModal(day, getDayLabelWithDate(week.wk, i))}
                   />
                 ))}
               </div>
@@ -953,7 +976,7 @@ export default function TrainingPlan() {
           >
             <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
               <div>
-                <div style={{ fontSize: 12, color: "#94a3b8", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
+                <div style={{ fontSize: 12, color: "#f8fafc", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
                   {modalDayLabel}
                 </div>
                 <div style={{ marginTop: 4, fontSize: 20, fontWeight: 700, color: "#f8fafc", lineHeight: 1.3 }}>
