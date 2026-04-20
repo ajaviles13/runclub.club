@@ -1,14 +1,18 @@
 import { useState } from "react";
 
-const RACE_DATE = new Date("2026-12-06");
-const PLAN_START = new Date("2026-04-16");
+const RACE_DATE = new Date(2026, 11, 6);
+const PLAN_START = new Date(2026, 3, 16);
 
 function getDaysToRace() {
-  return Math.max(0, Math.ceil((RACE_DATE - new Date()) / 86400000));
+  const today = new Date();
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  return Math.max(0, Math.round((RACE_DATE - todayStart) / 86400000));
 }
 
 function getCurrentWeek() {
-  const diff = Math.floor((new Date() - PLAN_START) / (7 * 86400000));
+  const today = new Date();
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const diff = Math.floor((todayStart - PLAN_START) / (7 * 86400000));
   return Math.min(Math.max(1, diff + 1), 33);
 }
 
@@ -505,11 +509,11 @@ function DayCard({ day, label }) {
         gap: 3,
       }}
     >
-      <div style={{ fontSize: 9, fontWeight: 700, color: "#475569", letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
+      <div style={{ fontSize: 11, fontWeight: 700, color: "#475569", letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
       <div
         style={{
           display: "inline-block",
-          fontSize: 9,
+          fontSize: 11,
           fontWeight: 700,
           letterSpacing: 0.5,
           color: disc.color,
@@ -521,14 +525,14 @@ function DayCard({ day, label }) {
       >
         {disc.label}
       </div>
-      {day.time && <div style={{ fontSize: 9, color: "#64748b" }}>{day.time}</div>}
-      <div style={{ fontSize: 11, fontWeight: 600, color: "#e2e8f0", lineHeight: 1.35, marginTop: 2 }}>{day.title}</div>
-      <div style={{ fontSize: 10, color: "#64748b", lineHeight: 1.45, marginTop: 1 }}>{day.detail}</div>
+      {day.time && <div style={{ fontSize: 11, color: "#64748b" }}>{day.time}</div>}
+      <div style={{ fontSize: 13, fontWeight: 600, color: "#e2e8f0", lineHeight: 1.35, marginTop: 2 }}>{day.title}</div>
+      <div style={{ fontSize: 12, color: "#64748b", lineHeight: 1.45, marginTop: 1 }}>{day.detail}</div>
       {day.flag && (
         <div
           style={{
             marginTop: 4,
-            fontSize: 9,
+            fontSize: 11,
             fontWeight: 700,
             color: disc.color,
             background: `${disc.color}18`,
@@ -581,10 +585,20 @@ export default function TrainingPlan() {
     >
       <div style={{ background: "rgba(11,21,38,0.85)", borderBottom: "1px solid #1a2942", padding: "16px 16px 14px", backdropFilter: "blur(6px)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <div style={{ fontSize: 24, fontWeight: 700, color: "#f8fafc", letterSpacing: 0.4 }}>
+          <img
+            src="/images/IM_703LaQuinta_Logo_full.png"
+            alt="Ironman 70.3 La Quinta logo"
+            style={{
+              width: "min(300px, 80vw)",
+              height: "auto",
+              display: "block",
+              marginBottom: 12,
+            }}
+          />
+          <div style={{ fontSize: 30, fontWeight: 700, color: "#f8fafc", letterSpacing: 0.4 }}>
             Ironman 70.3 Training Guide
           </div>
-          <div style={{ color: "#94a3b8", marginTop: 6, fontSize: 13 }}>
+          <div style={{ color: "#94a3b8", marginTop: 6, fontSize: 15 }}>
             Built for consistency, race readiness, and long-term confidence.
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
@@ -596,7 +610,7 @@ export default function TrainingPlan() {
               <span
                 key={i}
                 style={{
-                  fontSize: 11,
+                  fontSize: 13,
                   fontWeight: 600,
                   padding: "3px 10px",
                   borderRadius: 20,
@@ -611,7 +625,7 @@ export default function TrainingPlan() {
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 10 }}>
             {Object.entries(DISC).map(([k, v]) => (
-              <span key={k} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#475569" }}>
+              <span key={k} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#475569" }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: v.color, display: "inline-block" }} />
                 {v.label}
               </span>
@@ -634,14 +648,14 @@ export default function TrainingPlan() {
                   border: `1px solid ${on ? p.accent : "#1e293b"}`,
                   padding: "5px 12px",
                   borderRadius: 20,
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: 700,
                   cursor: "pointer",
                   transition: "all 0.15s",
                 }}
               >
                 {p.name}
-                <span style={{ marginLeft: 5, fontWeight: 400, opacity: 0.75, fontSize: 11 }}>
+                <span style={{ marginLeft: 5, fontWeight: 400, opacity: 0.75, fontSize: 13 }}>
                   Wk {p.wRange[0]}-{p.wRange[1]}
                 </span>
               </button>
@@ -659,18 +673,18 @@ export default function TrainingPlan() {
               background: phase.accentBg,
             }}
           >
-            <div style={{ fontWeight: 700, fontSize: 14, color: phase.accent, marginBottom: 3 }}>
+            <div style={{ fontWeight: 700, fontSize: 16, color: phase.accent, marginBottom: 3 }}>
               Phase {phase.id}: {phase.name} · {phase.dates}
             </div>
-            <div style={{ fontSize: 12, color: "#94a3b8", marginBottom: 10 }}>{phase.focus}</div>
+            <div style={{ fontSize: 14, color: "#94a3b8", marginBottom: 10 }}>{phase.focus}</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 8 }}>
               {[
                 { title: "Phase milestones", body: phase.milestone },
                 { title: "Coach's note", body: phase.note },
               ].map((box, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,0.03)", borderRadius: 8, padding: "10px 12px" }}>
-                  <div style={{ fontSize: 10, fontWeight: 700, color: "#475569", letterSpacing: 1, textTransform: "uppercase", marginBottom: 4 }}>{box.title}</div>
-                  <div style={{ fontSize: 11, color: "#cbd5e1", lineHeight: 1.6 }}>{box.body}</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: "#475569", letterSpacing: 1, textTransform: "uppercase", marginBottom: 4 }}>{box.title}</div>
+                  <div style={{ fontSize: 13, color: "#cbd5e1", lineHeight: 1.6 }}>{box.body}</div>
                 </div>
               ))}
             </div>
@@ -678,7 +692,7 @@ export default function TrainingPlan() {
         )}
 
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 14, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 10, color: "#475569", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
+          <span style={{ fontSize: 12, color: "#475569", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
             Week:
           </span>
           {phaseWeeks.map((w) => {
@@ -695,7 +709,7 @@ export default function TrainingPlan() {
                   background: isOn ? phase?.accent || "#22d3ee" : "transparent",
                   color: isOn ? "#000" : isCur ? phase?.accent || "#22d3ee" : "#475569",
                   border: `2px solid ${isOn ? phase?.accent || "#22d3ee" : isCur ? `${phase?.accent || "#22d3ee"}70` : "#1e293b"}`,
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: 700,
                   cursor: "pointer",
                   transition: "all 0.12s",
@@ -725,8 +739,8 @@ export default function TrainingPlan() {
           <div style={{ marginTop: 10 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
               <div>
-                <span style={{ fontWeight: 700, fontSize: 17, color: "#f8fafc" }}>{week.theme}</span>
-                <span style={{ marginLeft: 8, fontSize: 12, color: "#475569" }}>
+                <span style={{ fontWeight: 700, fontSize: 20, color: "#f8fafc" }}>{week.theme}</span>
+                <span style={{ marginLeft: 8, fontSize: 14, color: "#475569" }}>
                   Week {week.wk} · {week.dates}
                 </span>
               </div>
@@ -738,7 +752,7 @@ export default function TrainingPlan() {
                     color: "#f87171",
                     padding: "3px 8px",
                     borderRadius: 12,
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: 700,
                   }}
                 >
@@ -755,7 +769,7 @@ export default function TrainingPlan() {
                   borderRadius: 8,
                   padding: "9px 12px",
                   marginBottom: 10,
-                  fontSize: 12,
+                  fontSize: 14,
                   color: "#fde68a",
                   lineHeight: 1.55,
                 }}
@@ -789,13 +803,13 @@ export default function TrainingPlan() {
                   color: activeWk <= 1 ? "#1e293b" : "#64748b",
                   padding: "7px 16px",
                   borderRadius: 8,
-                  fontSize: 12,
+                  fontSize: 14,
                   cursor: activeWk <= 1 ? "default" : "pointer",
                 }}
                 >
                   {"<- Prev week"}
                 </button>
-              <div style={{ fontSize: 11, color: "#334155", alignSelf: "center" }}>
+              <div style={{ fontSize: 13, color: "#334155", alignSelf: "center" }}>
                 {week.wk} of 33 · Phase {week.ph}
               </div>
               <button
@@ -807,7 +821,7 @@ export default function TrainingPlan() {
                   color: activeWk >= 33 ? "#1e293b" : "#64748b",
                   padding: "7px 16px",
                   borderRadius: 8,
-                  fontSize: 12,
+                  fontSize: 14,
                   cursor: activeWk >= 33 ? "default" : "pointer",
                 }}
                 >
@@ -822,7 +836,7 @@ export default function TrainingPlan() {
             marginTop: 32,
             paddingTop: 14,
             borderTop: "1px solid #1e293b",
-            fontSize: 11,
+            fontSize: 13,
             color: "#334155",
             textAlign: "center",
             lineHeight: 1.8,
