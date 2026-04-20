@@ -18,35 +18,35 @@ function getCurrentWeek() {
 
 const PHASES = [
   {
-    id: 1, name: "Foundation", wRange: [1, 8], dates: "Apr 16 - Jun 10",
+    id: 1, name: "Foundation", wRange: [1, 8], dates: "Apr 20 - Jun 14",
     accent: "#22d3ee", accentBg: "rgba(34,211,238,0.08)",
     focus: "Aerobic base, ankle protection, build the daily habit",
     milestone: "Swim 800M continuous · Long run 5 mi · Trainer 80 min",
     note: "Be patient - the ankle demands respect in these first 8 weeks. Run easy and stop if anything feels off. Swim and bike can push harder. Order your road bike by Week 6 so it arrives before open water begins.",
   },
   {
-    id: 2, name: "Build I", wRange: [9, 16], dates: "Jun 11 - Aug 5",
+    id: 2, name: "Build I", wRange: [9, 16], dates: "Jun 15 - Aug 9",
     accent: "#86efac", accentBg: "rgba(134,239,172,0.08)",
     focus: "Volume increase, open water debut, first brick workouts",
     milestone: "Swim 1,500M continuous · Long run 8 mi · 2+ hour long ride",
     note: "Open water at Lake Pleasant will feel completely different - no black line, no walls. Embrace it. Brick workouts begin (bike immediately into run). Your legs will feel like concrete. That adaptation is the whole point.",
   },
   {
-    id: 3, name: "Build II", wRange: [17, 24], dates: "Aug 6 - Sep 30",
+    id: 3, name: "Build II", wRange: [17, 24], dates: "Aug 10 - Oct 4",
     accent: "#fb923c", accentBg: "rgba(251,146,60,0.08)",
     focus: "Race-distance swim achieved, peak bricks, maximum volume",
     milestone: "Swim 1,900M race distance · Long run 12 mi · 3.75h brick",
     note: "Week 19 you swim 1,900M for the first time - your confidence changes forever. August in Phoenix is brutal: hydrate before, during, and after every session. These long bricks are your most race-specific work.",
   },
   {
-    id: 4, name: "Race Prep", wRange: [25, 30], dates: "Oct 1 - Nov 11",
+    id: 4, name: "Race Prep", wRange: [25, 30], dates: "Oct 5 - Nov 15",
     accent: "#d946ef", accentBg: "rgba(217,70,239,0.08)",
     focus: "Race-pace sharpening, full simulations, confidence building",
     milestone: "Full race simulation · Race-pace 1,900M swim · 10-mi tempo run",
     note: "Weeks 25 & 28 are full race simulations: Swim -> Bike -> Run back-to-back. THIS is where you dial in your nutrition strategy. Race day is not the place to experiment with gels or pacing.",
   },
   {
-    id: 5, name: "Taper", wRange: [31, 33], dates: "Nov 12 - Dec 6",
+    id: 5, name: "Taper", wRange: [31, 33], dates: "Nov 16 - Dec 6",
     accent: "#fbbf24", accentBg: "rgba(251,191,36,0.08)",
     focus: "Volume reduction, stay sharp, arrive fresh and confident",
     milestone: "Race Day: December 6, 2026 - La Quinta, CA",
