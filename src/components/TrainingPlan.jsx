@@ -625,7 +625,7 @@ export default function TrainingPlan() {
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 10 }}>
             {Object.entries(DISC).map(([k, v]) => (
-              <span key={k} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: "#475569" }}>
+              <span key={k} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 13, color: v.color }}>
                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: v.color, display: "inline-block" }} />
                 {v.label}
               </span>
@@ -635,7 +635,17 @@ export default function TrainingPlan() {
       </div>
 
       <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 14px" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 16 }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "nowrap",
+            gap: 8,
+            marginTop: 16,
+            overflowX: "auto",
+            paddingBottom: 4,
+            scrollbarWidth: "thin",
+          }}
+        >
           {PHASES.map((p) => {
             const on = activePh === p.id;
             return (
@@ -643,6 +653,7 @@ export default function TrainingPlan() {
                 key={p.id}
                 onClick={() => switchPhase(p.id)}
                 style={{
+                  flex: "0 0 auto",
                   background: on ? p.accent : "transparent",
                   color: on ? "#000" : "#64748b",
                   border: `1px solid ${on ? p.accent : "#1e293b"}`,
