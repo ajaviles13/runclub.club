@@ -939,6 +939,68 @@ export default function TrainingPlan() {
             lineHeight: 1.8,
           }}
         >
+          <div style={{ marginBottom: 18 }}>
+            <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: 0.5, marginBottom: 8 }}>
+              Sponsored By
+            </div>
+
+            <a href="https://www.plungepalz.com/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/images/PlungePalz_Logo_ForShare.png"
+                alt="PlungePalz logo"
+                style={{
+                  width: "min(500px, 100%)",
+                  height: "auto",
+                  display: "block",
+                  margin: "0 auto",
+                }}
+              />
+            </a>
+
+            <div style={{ marginTop: 8, fontSize: 13, color: "#cbd5e1" }}>
+              Record, track, share, and earn for your Contrast Therapy activities
+            </div>
+
+            <div
+              style={{
+                marginTop: 10,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 10,
+                flexWrap: "wrap",
+              }}
+            >
+              <a href="https://apps.apple.com/us/app/plungepalz/id6744040589" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/Download_App_Store.png"
+                  alt="Download on the App Store"
+                  style={{ width: "min(250px, 90vw)", height: "auto", display: "block" }}
+                />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.PlungePalz.app" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/Download_Google_Play_Store.png"
+                  alt="Get it on Google Play"
+                  style={{ width: "min(250px, 90vw)", height: "auto", display: "block" }}
+                />
+              </a>
+            </div>
+
+            <a
+              href="https://www.plungepalz.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-block", marginTop: 10 }}
+            >
+              <img
+                src="/images/PlungePalz_Logo_ForShare.png"
+                alt="Visit PlungePalz website"
+                style={{ width: 58, height: 58, borderRadius: 10, objectFit: "cover" }}
+              />
+            </a>
+          </div>
+
           Race distances: Swim 1.2 mi (1,931M) · Bike 56 mi · Run 13.1 mi (half marathon)
           <br />
           Weekly structure: Mon rest · Tue swim (AM) · Wed bike (AM) · Thu run + strength (PM) · Fri rest · Sat long ride/brick (AM) · Sun long run (AM)
