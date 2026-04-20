@@ -1,17 +1,7 @@
-import Hero from './components/Hero'
-import Gallery from './components/Gallery'
-import ContactForm from './components/ContactForm'
-import Footer from './components/Footer'
+import TrainingPlan from "./components/TrainingPlan";
 
 function App() {
-  return (
-    <>
-      <Hero />
-      <Gallery />
-      <ContactForm />
-      <Footer />
-    </>
-  )
+  return <TrainingPlan />;
 }
 
-export default App
+export default App;
