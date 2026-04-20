@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const RACE_DATE = new Date(2026, 11, 6);
 const PLAN_START = new Date(2026, 3, 16);
@@ -491,11 +491,20 @@ const WEEKS = [
   },
 ];
 
-function DayCard({ day, label }) {
+function DayCard({ day, label, onOpen }) {
   const disc = DISC[day.type] || DISC.rest;
   const isRest = day.type === "rest";
   return (
     <div
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
       style={{
         borderRadius: 8,
         border: `1px solid ${isRest ? "#1e293b" : `${disc.color}30`}`,
@@ -507,6 +516,7 @@ function DayCard({ day, label }) {
         display: "flex",
         flexDirection: "column",
         gap: 3,
+        cursor: "pointer",
       }}
     >
       <div style={{ fontSize: 11, fontWeight: 700, color: "#475569", letterSpacing: 1, textTransform: "uppercase" }}>{label}</div>
@@ -553,6 +563,8 @@ export default function TrainingPlan() {
   const initPhase = (WEEKS.find((w) => w.wk === curWk) || WEEKS[0]).ph;
   const [activePh, setActivePh] = useState(initPhase);
   const [activeWk, setActiveWk] = useState(curWk);
+  const [modalDay, setModalDay] = useState(null);
+  const [modalDayLabel, setModalDayLabel] = useState("");
 
   const phase = PHASES.find((p) => p.id === activePh);
   const week = WEEKS.find((w) => w.wk === activeWk);
@@ -576,6 +588,26 @@ export default function TrainingPlan() {
     setActiveWk(nw);
     if (wd && wd.ph !== activePh) setActivePh(wd.ph);
   };
+  const modalDisc = modalDay ? DISC[modalDay.type] || DISC.rest : DISC.rest;
+
+  const openDayModal = (day, label) => {
+    setModalDay(day);
+    setModalDayLabel(label);
+  };
+
+  const closeDayModal = () => {
+    setModalDay(null);
+    setModalDayLabel("");
+  };
+
+  useEffect(() => {
+    if (!modalDay) return undefined;
+    const onEscape = (e) => {
+      if (e.key === "Escape") closeDayModal();
+    };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [modalDay]);
 
   return (
     <div
@@ -803,7 +835,12 @@ export default function TrainingPlan() {
                 }}
               >
                 {weekDays.map((day, i) => (
-                  <DayCard key={i} day={day} label={week.wk === 33 ? "" : DAY_LABELS[i]} />
+                  <DayCard
+                    key={i}
+                    day={day}
+                    label={week.wk === 33 ? "" : DAY_LABELS[i]}
+                    onOpen={() => openDayModal(day, week.wk === 33 ? day.title : DAY_LABELS[i])}
+                  />
                 ))}
               </div>
             </div>
@@ -862,6 +899,82 @@ export default function TrainingPlan() {
           Weekly structure: Mon rest · Tue swim (AM) · Wed bike (AM) · Thu run + strength (PM) · Fri rest · Sat long ride/brick (AM) · Sun long run (AM)
         </div>
       </div>
+
+      {modalDay && (
+        <div
+          onClick={(e) => {
+            if (e.target === e.currentTarget) closeDayModal();
+          }}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(2,6,23,0.7)",
+            backdropFilter: "blur(3px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 16,
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              width: "min(560px, 100%)",
+              maxHeight: "85vh",
+              overflowY: "auto",
+              borderRadius: 14,
+              border: `1px solid ${modalDisc.color}55`,
+              background: "#0b1526",
+              padding: "16px 16px 14px",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.45)",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
+              <div>
+                <div style={{ fontSize: 12, color: "#94a3b8", fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
+                  {modalDayLabel}
+                </div>
+                <div style={{ marginTop: 4, fontSize: 20, fontWeight: 700, color: "#f8fafc", lineHeight: 1.3 }}>
+                  {modalDay.title}
+                </div>
+              </div>
+              <button
+                onClick={closeDayModal}
+                style={{
+                  border: "1px solid #334155",
+                  background: "transparent",
+                  color: "#cbd5e1",
+                  borderRadius: 8,
+                  width: 34,
+                  height: 34,
+                  fontSize: 18,
+                  lineHeight: 1,
+                  fontWeight: 700,
+                }}
+                aria-label="Close details modal"
+              >
+                ×
+              </button>
+            </div>
+
+            <div style={{ marginTop: 12, display: "inline-block", fontSize: 12, fontWeight: 700, color: modalDisc.color, background: `${modalDisc.color}20`, borderRadius: 999, padding: "4px 10px" }}>
+              {modalDisc.label}
+            </div>
+
+            {modalDay.time && <div style={{ marginTop: 10, fontSize: 13, color: "#94a3b8" }}>{modalDay.time}</div>}
+
+            <div style={{ marginTop: 10, fontSize: 15, color: "#e2e8f0", lineHeight: 1.7 }}>
+              {modalDay.detail}
+            </div>
+
+            {modalDay.flag && (
+              <div style={{ marginTop: 12, display: "inline-block", fontSize: 12, fontWeight: 700, color: modalDisc.color, background: `${modalDisc.color}20`, borderRadius: 8, padding: "5px 10px" }}>
+                {modalDay.flag}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
