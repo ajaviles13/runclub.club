@@ -558,6 +558,10 @@ export default function TrainingPlan() {
   const week = WEEKS.find((w) => w.wk === activeWk);
   const phaseWeeks = WEEKS.filter((w) => w.ph === activePh);
   const daysLeft = getDaysToRace();
+  const weekDays =
+    week && week.wk !== 33
+      ? [week.days[0], week.days[1], week.days[2], week.days[4], week.days[3], week.days[5], week.days[6]]
+      : week?.days || [];
 
   const switchPhase = (pid) => {
     setActivePh(pid);
@@ -798,7 +802,7 @@ export default function TrainingPlan() {
                   minWidth: 680,
                 }}
               >
-                {week.days.map((day, i) => (
+                {weekDays.map((day, i) => (
                   <DayCard key={i} day={day} label={week.wk === 33 ? "" : DAY_LABELS[i]} />
                 ))}
               </div>
@@ -848,14 +852,14 @@ export default function TrainingPlan() {
             paddingTop: 14,
             borderTop: "1px solid #1e293b",
             fontSize: 13,
-            color: "#334155",
+            color: "#f8fafc",
             textAlign: "center",
             lineHeight: 1.8,
           }}
         >
           Race distances: Swim 1.2 mi (1,931M) · Bike 56 mi · Run 13.1 mi (half marathon)
           <br />
-          Weekly structure: Mon rest · Tue swim (AM) · Wed bike (AM) · Thu rest · Fri run + strength (PM) · Sat long ride/brick (AM) · Sun long run (AM)
+          Weekly structure: Mon rest · Tue swim (AM) · Wed bike (AM) · Thu run + strength (PM) · Fri rest · Sat long ride/brick (AM) · Sun long run (AM)
         </div>
       </div>
     </div>
