@@ -75,7 +75,7 @@ const WEEKS = [
     callout: "Ankle alert: All runs are strictly easy pace. Walk breaks encouraged. Stop if you feel anything in the ankle.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 600M", "WU 100M · 4×100M easy freestyle · 2×50M kick drill · CD 100M. Focus on breathing every 3 strokes."),
+      d("swim", "AM 6:00", "Swim 600M", "Warm Up 100M · 4×100M easy freestyle · 2×50M kick drill · Cool Down 100M. Focus on breathing every 3 strokes."),
       d("bike", "AM 6:00", "Trainer 45 min", "Zone 2 only (conversational pace). Cadence 85-95 rpm. Flat resistance. Build the habit."),
       R,
       d("run", "PM 6:00", "Run 2.5 mi + Strength", "Easy run, walk breaks OK · 3×10 squats, lunges, push-ups, glute bridges, 30s plank ×2.", "PM - sleep in"),
@@ -87,7 +87,7 @@ const WEEKS = [
     wk: 2, ph: 1, dates: "Apr 23-29", theme: "Settling In",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 700M", "WU 100M · 5×100M with 20s rest · Catch-up drill 100M · CD 100M."),
+      d("swim", "AM 6:00", "Swim 700M", "Warm Up 100M · 5×100M with 20s rest · Catch-up drill 100M · Cool Down 100M."),
       d("bike", "AM 6:00", "Trainer 50 min", "Z2. Track RPE (aim 5-6/10). Should feel fully sustainable."),
       R,
       d("run", "PM 6:00", "Run 3 mi + Strength", "Easy run · 3×12 squats, 3×10 lunges ea, push-ups, 2×45s plank, 3×15 glute bridges.", "PM - sleep in"),
@@ -99,7 +99,7 @@ const WEEKS = [
     wk: 3, ph: 1, dates: "Apr 30-May 6", theme: "Finding Rhythm",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 800M", "WU 100M · 4×150M with 30s rest · Fingertip-drag drill 100M · CD 100M."),
+      d("swim", "AM 6:00", "Swim 800M", "Warm Up 100M · 4×150M with 30s rest · Fingertip-drag drill 100M · Cool Down 100M."),
       d("bike", "AM 6:00", "Trainer 55 min", "Z2 + 2-min Z3 surge at the 45-min mark. Easy cool-down to finish."),
       R,
       d("run", "PM 6:00", "Run 3.5 mi + Strength", "Easy run · Single-leg work: Bulgarian splits 3×8, step-ups 3×10, calf raises 3×20.", "PM - sleep in"),
@@ -112,7 +112,7 @@ const WEEKS = [
     callout: "Swim goal this week: 800M continuous. Go slow, breathe, don't stop. This is your first big breakthrough.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 900M", "WU 100M · 800M CONTINUOUS (pace yourself!) · CD if energy remains.", "Goal: 800M nonstop"),
+      d("swim", "AM 6:00", "Swim 900M", "Warm Up 100M · 800M CONTINUOUS (pace yourself!) · Cool Down if energy remains.", "Goal: 800M nonstop"),
       d("bike", "AM 6:00", "Trainer 60 min", "Z2 with 2×5 min Z3 intervals. Recover fully at Z2 between each."),
       R,
       d("run", "PM 6:00", "Run 4 mi + Strength", "Easy pace · 3×12 goblet squats, RDL, push-ups, hip thrusts, plank. 40 min.", "PM - sleep in"),
@@ -124,7 +124,7 @@ const WEEKS = [
     wk: 5, ph: 1, dates: "May 14-20", theme: "Steady Progress",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,000M", "WU 100M · 2×400M (60s rest) or 800M continuous if Week 4 felt good · Drills 100M."),
+      d("swim", "AM 6:00", "Swim 1,000M", "Warm Up 100M · 2×400M (60s rest) or 800M continuous if Week 4 felt good · Drills 100M."),
       d("bike", "AM 6:00", "Trainer 65 min", "Z2. Fully conversational throughout. Engine building."),
       R,
       d("run", "PM 6:00", "Run 4 mi + Strength", "Easy · Core & hip focus: planks, side planks, dead bugs, clamshells. Ankle stability work.", "PM - sleep in"),
@@ -137,7 +137,7 @@ const WEEKS = [
     callout: "Order your road bike this week if you haven't. Target arrival: mid-June for Phase 2 open water bricks.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,100M", "WU 100M · 800M continuous (push it!) · Drills 200M · CD 100M."),
+      d("swim", "AM 6:00", "Swim 1,100M", "Warm Up 100M · 800M continuous (push it!) · Drills 200M · Cool Down 100M."),
       d("bike", "AM 6:00", "Trainer 70 min", "Z2 with 3×5 min Z3 efforts. Build your aerobic engine."),
       R,
       d("run", "PM 6:00", "Run 4.5 mi + Strength", "Easy run · Increase weights where bodyweight feels easy. Squats, lunges, RDLs. 40 min.", "PM - sleep in"),
@@ -150,7 +150,7 @@ const WEEKS = [
     callout: "Swim goal: 1,000M without stopping. Go slow - distance matters, not pace. This is a major milestone.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,200M", "WU 100M · 1,000M CONTINUOUS attempt · Rest · CD 100M. Biggest swim yet.", "Goal: 1,000M nonstop"),
+      d("swim", "AM 6:00", "Swim 1,200M", "Warm Up 100M · 1,000M CONTINUOUS attempt · Rest · Cool Down 100M. Biggest swim yet.", "Goal: 1,000M nonstop"),
       d("bike", "AM 6:00", "Trainer 75 min", "Z2 with simulated hills (raise resistance for 5 min × 3). Climbing prep."),
       R,
       d("run", "PM 6:00", "Run 5 mi + Strength", "Easy run · Heavier compound work: squats, lunges, push-ups, bent rows, RDLs. 45 min.", "PM - sleep in"),
@@ -163,7 +163,7 @@ const WEEKS = [
     callout: "Volume drops ~30%. This is intentional - your body adapts during rest, not training. Do not skip this week.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 900M (Easy)", "WU 100M · 600M easy continuous · Drills 200M. Technique focus, zero effort."),
+      d("swim", "AM 6:00", "Swim 900M (Easy)", "Warm Up 100M · 600M easy continuous · Drills 200M. Technique focus, zero effort."),
       d("bike", "AM 6:00", "Trainer 60 min", "Z2 easy. No intervals. Just spin and let legs recover."),
       R,
       d("run", "PM 6:00", "Run 3.5 mi + Light Strength", "Very easy · Bodyweight only. Mobility and foam rolling. 30 min.", "PM - sleep in"),
@@ -176,7 +176,7 @@ const WEEKS = [
     callout: "First open water swim at Lake Pleasant this Saturday! Bring a buddy, wear a bright cap. No lane lines, no walls - that's exactly the point.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,200M (Pool)", "WU 100M · 1,000M continuous (Week 7 milestone confirmed) · Drills 200M."),
+      d("swim", "AM 6:00", "Swim 1,200M (Pool)", "Warm Up 100M · 1,000M continuous (Week 7 milestone confirmed) · Drills 200M."),
       d("bike", "AM 6:00", "Road Bike / Trainer 80 min", "If road bike arrived: first outdoor ride! Easy Z2. If not: trainer 80 min."),
       R,
       d("run", "PM 6:00", "Run 5 mi + Strength", "Easy run · Leg focus: squats, lunges, step-ups, calf raises. 45 min.", "PM - sleep in"),
@@ -188,7 +188,7 @@ const WEEKS = [
     wk: 10, ph: 2, dates: "Jun 18-24", theme: "Momentum Builds",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,300M", "WU 100M · 3×400M with 45s rest · Drills 100M · CD 100M."),
+      d("swim", "AM 6:00", "Swim 1,300M", "Warm Up 100M · 3×400M with 45s rest · Drills 100M · Cool Down 100M."),
       d("bike", "AM 6:00", "Road / Trainer 85 min", "Z2. Outdoor: flat, low-traffic roads. Dial in bike fit."),
       R,
       d("run", "PM 6:00", "Run 5.5 mi + Strength", "Easy-moderate · Upper + core: push-ups, rows, planks, dead bugs. 45 min.", "PM - sleep in"),
@@ -200,7 +200,7 @@ const WEEKS = [
     wk: 11, ph: 2, dates: "Jun 25-Jul 1", theme: "90-Min Ride Milestone",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,400M", "WU 100M · 1,200M continuous attempt · CD 200M."),
+      d("swim", "AM 6:00", "Swim 1,400M", "Warm Up 100M · 1,200M continuous attempt · Cool Down 200M."),
       d("bike", "AM 6:00", "Road Ride 90 min", "90-minute milestone ride. Z2 throughout. Bring water. Outdoor preferred.", "Milestone"),
       R,
       d("run", "PM 6:00", "Run 6 mi + Strength", "Easy-moderate · Increase weight if prior sessions felt easy. 45 min.", "PM - sleep in"),
@@ -213,7 +213,7 @@ const WEEKS = [
     callout: "Tuesday: attempt 1,500M continuous - the full 70.3 swim distance. Go slow. Don't stop. This changes everything.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,500M", "WU 100M · 1,500M CONTINUOUS (full 70.3 race distance!) · CD if possible.", "Full race distance"),
+      d("swim", "AM 6:00", "Swim 1,500M", "Warm Up 100M · 1,500M CONTINUOUS (full 70.3 race distance!) · Cool Down if possible.", "Full race distance"),
       d("bike", "AM 6:00", "Road Ride 90 min", "Z2-Z3. 60 min Z2 + 2×10 min Z3 tempo efforts."),
       R,
       d("run", "PM 6:00", "Run 6 mi + Strength", "Moderate · Strength: peak Phase 2 intensity. 45 min heavy compound.", "PM - sleep in"),
@@ -238,7 +238,7 @@ const WEEKS = [
     wk: 14, ph: 2, dates: "Jul 16-22", theme: "Back to Work",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,600M", "WU 100M · 1,400M continuous (or 2×700M w/ 60s rest) · Drills 100M."),
+      d("swim", "AM 6:00", "Swim 1,600M", "Warm Up 100M · 1,400M continuous (or 2×700M w/ 60s rest) · Drills 100M."),
       d("bike", "AM 6:00", "Road Ride 95 min", "Z2-Z3. Include 2×10 min Z3 tempo segments."),
       R,
       d("run", "PM 6:00", "Run 7 mi + Strength", "Moderate pace · 45 min all major lifts heavier. 3×10-12.", "PM - sleep in"),
@@ -251,7 +251,7 @@ const WEEKS = [
     callout: "Saturday brick (Bike 2h -> Run 3 mi) is your most important workout yet. Run SLOW after the bike - brick effect is real.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,700M", "WU 100M · 1,500M continuous (Week 12 confirmation) · CD 100M."),
+      d("swim", "AM 6:00", "Swim 1,700M", "Warm Up 100M · 1,500M continuous (Week 12 confirmation) · Cool Down 100M."),
       d("bike", "AM 6:00", "Road Ride 100 min", "Z2-Z3. 3×8 min Z3 efforts."),
       R,
       d("run", "PM 6:00", "Run 7.5 mi + Strength", "Easy-moderate · Glutes and legs priority for brick prep. 45 min.", "PM - sleep in"),
@@ -277,7 +277,7 @@ const WEEKS = [
     callout: "Highest-volume phase begins. August in Phoenix is extreme - hydrate 16-24 oz before every morning session. No exceptions.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,800M", "WU 100M · 3×500M with 45s rest · Drills 100M · CD 100M."),
+      d("swim", "AM 6:00", "Swim 1,800M", "Warm Up 100M · 3×500M with 45s rest · Drills 100M · Cool Down 100M."),
       d("bike", "AM 6:00", "Road Ride 110 min", "Z2-Z3. Include 3×10 min Z3 tempo efforts."),
       R,
       d("run", "PM 6:00", "Run 8 mi + Strength", "Moderate pace · 45 min compound focus on hip stability and posterior chain.", "PM - sleep in"),
@@ -302,7 +302,7 @@ const WEEKS = [
     callout: "Tuesday: Swim 1,900M continuous - the full 70.3 race distance. This single workout changes your confidence forever. Go slow. Don't stop.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,900M", "WU 100M · 1,900M CONTINUOUS (full race distance!) · CD optional.", "Full race distance"),
+      d("swim", "AM 6:00", "Swim 1,900M", "Warm Up 100M · 1,900M CONTINUOUS (full race distance!) · Cool Down optional.", "Full race distance"),
       d("bike", "AM 6:00", "Road Ride 120 min", "Z2-Z3. 2-hour ride. Building serious bike base."),
       R,
       d("run", "PM 6:00", "Run 9 mi + Strength", "Easy-moderate · 45 min, legs priority.", "PM - sleep in"),
@@ -315,7 +315,7 @@ const WEEKS = [
     callout: "You earned this. Body is adapting from the biggest weeks of the plan.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,400M (Easy)", "WU 100M · 1,000M easy continuous · Drills 300M. Relax into the water."),
+      d("swim", "AM 6:00", "Swim 1,400M (Easy)", "Warm Up 100M · 1,000M easy continuous · Drills 300M. Relax into the water."),
       d("bike", "AM 6:00", "Road Ride 90 min", "Z2 easy. No intensity."),
       R,
       d("run", "PM 6:00", "Run 6 mi + Light Strength", "Easy · Bodyweight + mobility. 30 min.", "PM - sleep in"),
@@ -328,7 +328,7 @@ const WEEKS = [
     callout: "Biggest week of the plan. Saturday brick is 3.5h bike -> 5-mile run. This simulates the back half of your race. Fueling is not optional.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 2,000M", "WU 100M · 1,900M continuous (or 2×900M w/ 60s rest) · CD 100M. Above race distance!", "Above race distance"),
+      d("swim", "AM 6:00", "Swim 2,000M", "Warm Up 100M · 1,900M continuous (or 2×900M w/ 60s rest) · Cool Down 100M. Above race distance!", "Above race distance"),
       d("bike", "AM 6:00", "Road Ride 130 min", "Z2-Z3 strong. Include 20-min race-pace segment."),
       R,
       d("run", "PM 6:00", "Run 9 mi + Strength", "Easy-moderate · Peak strength intensity of the plan. 45 min all compound.", "PM - sleep in"),
@@ -353,7 +353,7 @@ const WEEKS = [
     callout: "This is the peak of your entire training plan. After this week it's recovery and race prep. You've earned this summit.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 2,100M", "WU 100M · 2,000M continuous · CD 100M. Above race distance. Confidence locked in.", "Milestone"),
+      d("swim", "AM 6:00", "Swim 2,100M", "Warm Up 100M · 2,000M continuous · Cool Down 100M. Above race distance. Confidence locked in.", "Milestone"),
       d("bike", "AM 6:00", "Road Ride 140 min", "Z2-Z3. 2h 20min sustained strong effort."),
       R,
       d("run", "PM 6:00", "Run 11 mi + Strength", "Easy-moderate. Longest midweek run of the plan · Strength 45 min.", "PM - sleep in"),
@@ -379,7 +379,7 @@ const WEEKS = [
     callout: "Saturday: full race simulation! OW Swim -> Bike -> Run. Wear your race kit, use race nutrition, practice transitions. Take notes on what to improve.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,900M (Race Pace)", "WU 100M · 1,900M at race effort (comfortably hard, not max) · CD 100M."),
+      d("swim", "AM 6:00", "Swim 1,900M (Race Pace)", "Warm Up 100M · 1,900M at race effort (comfortably hard, not max) · Cool Down 100M."),
       d("bike", "AM 6:00", "Road Ride 130 min", "Z2-Z3. 3×10 min race-pace segments."),
       R,
       d("run", "PM 6:00", "Run 9 mi + Strength", "Easy-moderate with 2×1 mi at race pace (~9:15/mi) · Strength 40 min.", "PM - sleep in"),
@@ -391,7 +391,7 @@ const WEEKS = [
     wk: 26, ph: 4, dates: "Oct 8-14", theme: "Race Specificity",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,900M (Strong)", "WU 100M · 1,900M at strong-but-controlled race effort."),
+      d("swim", "AM 6:00", "Swim 1,900M (Strong)", "Warm Up 100M · 1,900M at strong-but-controlled race effort."),
       d("bike", "AM 6:00", "Road Ride 120 min", "Race-pace focus: 45 min Z2 warmup -> 30 min race pace -> 45 min Z2 cool-down."),
       R,
       d("run", "PM 6:00", "Run 9 mi + Strength", "3 miles at race pace within easy run · Strength 40 min.", "PM - sleep in"),
@@ -404,7 +404,7 @@ const WEEKS = [
     callout: "Reload before the final peak weeks of Phase 4.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,500M", "WU 100M · 1,300M easy · Drills 100M. Relaxed swim."),
+      d("swim", "AM 6:00", "Swim 1,500M", "Warm Up 100M · 1,300M easy · Drills 100M. Relaxed swim."),
       d("bike", "AM 6:00", "Road Ride 90 min", "Z2 easy. No race-pace work this week."),
       R,
       d("run", "PM 6:00", "Run 7 mi + Light Strength", "Easy · Bodyweight + mobility. 30 min.", "PM - sleep in"),
@@ -417,7 +417,7 @@ const WEEKS = [
     callout: "Saturday: second full race simulation. Execute more precisely than Week 25. Dial in nutrition timing.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 2,000M", "WU 100M · 2,000M at controlled race effort. Strong, confident swim.", "Milestone"),
+      d("swim", "AM 6:00", "Swim 2,000M", "Warm Up 100M · 2,000M at controlled race effort. Strong, confident swim.", "Milestone"),
       d("bike", "AM 6:00", "Road Ride 130 min", "Z2-Z3 with 20 min sustained race-pace effort."),
       R,
       d("run", "PM 6:00", "Run 10 mi + Strength", "Easy-moderate with 2×1.5 mi at race pace · Strength 40 min.", "PM - sleep in"),
@@ -455,7 +455,7 @@ const WEEKS = [
     callout: "Taper madness is real. You may feel sluggish or like your fitness is disappearing. It's not - your body is storing energy. Trust the process.",
     days: [
       R,
-      d("swim", "AM 6:00", "Swim 1,400M", "WU 100M · 1,100M easy with a few 50M race-pace bursts · CD 200M."),
+      d("swim", "AM 6:00", "Swim 1,400M", "Warm Up 100M · 1,100M easy with a few 50M race-pace bursts · Cool Down 200M."),
       d("bike", "AM 6:00", "Road Ride 80 min", "Fresh legs. Z2 with one 10-min race-pace effort in the middle."),
       R,
       d("run", "PM 6:00", "Run 6 mi + Light Strength", "Easy · 20 min bodyweight only. No heavy lifting.", "PM - sleep in"),
@@ -494,6 +494,10 @@ const WEEKS = [
 function DayCard({ day, label, onOpen }) {
   const disc = DISC[day.type] || DISC.rest;
   const isRest = day.type === "rest";
+  const detailItems = day.detail
+    .split("·")
+    .map((item) => item.trim())
+    .filter(Boolean);
   return (
     <div
       role="button"
@@ -537,7 +541,19 @@ function DayCard({ day, label, onOpen }) {
       </div>
       {day.time && <div style={{ fontSize: 11, color: "#64748b" }}>{day.time}</div>}
       <div style={{ fontSize: 13, fontWeight: 600, color: "#e2e8f0", lineHeight: 1.35, marginTop: 2 }}>{day.title}</div>
-      <div style={{ fontSize: 12, color: "#64748b", lineHeight: 1.45, marginTop: 1 }}>{day.detail}</div>
+      <div style={{ fontSize: 12, color: "#64748b", lineHeight: 1.45, marginTop: 1 }}>
+        {detailItems.length > 1 ? (
+          <ul style={{ margin: "0 0 0 16px", padding: 0 }}>
+            {detailItems.map((item, idx) => (
+              <li key={idx} style={{ marginBottom: 2 }}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          day.detail
+        )}
+      </div>
       {day.flag && (
         <div
           style={{
@@ -599,6 +615,12 @@ export default function TrainingPlan() {
     setModalDay(null);
     setModalDayLabel("");
   };
+  const modalDetailItems = modalDay
+    ? modalDay.detail
+        .split("·")
+        .map((item) => item.trim())
+        .filter(Boolean)
+    : [];
 
   useEffect(() => {
     if (!modalDay) return undefined;
@@ -964,7 +986,17 @@ export default function TrainingPlan() {
             {modalDay.time && <div style={{ marginTop: 10, fontSize: 13, color: "#94a3b8" }}>{modalDay.time}</div>}
 
             <div style={{ marginTop: 10, fontSize: 15, color: "#e2e8f0", lineHeight: 1.7 }}>
-              {modalDay.detail}
+              {modalDetailItems.length > 1 ? (
+                <ul style={{ margin: "0 0 0 18px", padding: 0 }}>
+                  {modalDetailItems.map((item, idx) => (
+                    <li key={idx} style={{ marginBottom: 6 }}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                modalDay.detail
+              )}
             </div>
 
             {modalDay.flag && (
