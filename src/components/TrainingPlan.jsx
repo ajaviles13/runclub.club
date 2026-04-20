@@ -939,7 +939,13 @@ export default function TrainingPlan() {
             lineHeight: 1.8,
           }}
         >
-          <div style={{ marginBottom: 18 }}>
+          <div>
+            Race distances: Swim 1.2 mi (1,931M) · Bike 56 mi · Run 13.1 mi (half marathon)
+            <br />
+            Weekly structure: Mon rest · Tue swim (AM) · Wed bike (AM) · Thu run + strength (PM) · Fri rest · Sat long ride/brick (AM) · Sun long run (AM)
+          </div>
+
+          <div style={{ marginTop: 16 }}>
             <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: 0.5, marginBottom: 8 }}>
               Sponsored By
             </div>
@@ -991,19 +997,24 @@ export default function TrainingPlan() {
               href="https://www.plungepalz.com/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-block", marginTop: 10 }}
+              style={{
+                marginTop: 10,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                color: "#f8fafc",
+                textDecoration: "none",
+                fontWeight: 600,
+              }}
             >
-              <img
-                src="/images/PlungePalz_Logo_ForShare.png"
-                alt="Visit PlungePalz website"
-                style={{ width: 58, height: 58, borderRadius: 10, objectFit: "cover" }}
-              />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M10 14L14 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                <path d="M7.5 16.5L5.8 18.2a3 3 0 104.2 4.2l1.7-1.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                <path d="M16.5 7.5l1.7-1.7a3 3 0 114.2 4.2l-1.7 1.7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+              Visit PlungePalz.com for more info
             </a>
           </div>
-
-          Race distances: Swim 1.2 mi (1,931M) · Bike 56 mi · Run 13.1 mi (half marathon)
-          <br />
-          Weekly structure: Mon rest · Tue swim (AM) · Wed bike (AM) · Thu run + strength (PM) · Fri rest · Sat long ride/brick (AM) · Sun long run (AM)
         </div>
       </div>
 
